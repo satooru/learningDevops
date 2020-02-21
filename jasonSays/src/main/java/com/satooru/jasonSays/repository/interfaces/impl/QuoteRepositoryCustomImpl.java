@@ -1,4 +1,4 @@
-package com.satooru.jasonSays.repository;
+package com.satooru.jasonSays.repository.interfaces.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
