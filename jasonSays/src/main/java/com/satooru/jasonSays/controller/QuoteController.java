@@ -7,7 +7,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,7 +25,6 @@ public class QuoteController {
     @GetMapping("/")
     public Quote findRandomQuote() {
         return quoteService.findRandomQuote();
-//        return new Quote("1", "Don't let dreams be dreams");
     }
 
     @GetMapping("/latest")
@@ -40,13 +38,13 @@ public class QuoteController {
     }
 
     @PostMapping("/")
-    public ResponseEntity<?> upsertQuote(@RequestBody Quote quote) {
-        quoteService.saveQuote(quote);
+    public ResponseEntity<?> upsertQuote(@RequestBody String quote) {
+        quoteService.saveQuote(new Quote(quote));
         return new ResponseEntity("Quote added successfully", HttpStatus.OK);
     }
 
-    @DeleteMapping(value = "/{id}")
-    public void deleteQuote(@PathVariable int number) {
-        quoteService.deleteQuote(number);
+    @DeleteMapping(value = "/")
+    public void deleteQuote(@RequestBody String quote) {
+        quoteService.deleteQuote(quote);
     }
 }

@@ -5,5 +5,5 @@ import com.satooru.jasonSays.model.Quote;
 public interface QuoteRepositoryCustom {
     Quote findRandomQuote();
     Quote findLatestQuote();
-    void delete(int number);
+    void delete(String quote);
 }

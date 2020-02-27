@@ -9,5 +9,5 @@ public interface QuoteService {
     Quote findLatestQuote();
     List<Quote> findAll();
     void saveQuote(Quote quote);
-    void deleteQuote(int number);
+    void deleteQuote(String quote);
 }
