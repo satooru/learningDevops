@@ -10,6 +10,7 @@ This project is about:
 
 ## Tools used
 This project simulates a Motivational Quote Picker using MongoDB, a Java BackEnd Application, and a FrontEnd Application.
+
 As for the Devops part, I plan to use Jenkins as CI/CD and Docker to manipulate containers.
 
 ## Logs
