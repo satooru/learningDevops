@@ -21,8 +21,7 @@ public class JasonSaysApplication implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         repository.deleteAll();
-        System.out.println(repository.count());
-        repository.save(new Quote(1, "Just Do it!"));
-        System.out.println(repository.count());
+        repository.save(new Quote("Just do it!"));
+        repository.save(new Quote("Make your dreams come true!"));
     }
 }

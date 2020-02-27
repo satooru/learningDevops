@@ -1,16 +1,18 @@
 package com.satooru.jasonSays.model;
 
+import java.time.LocalDateTime;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "quotes")
 public class Quote {
     @Id private String id;
-    private int number;
+    private LocalDateTime timestamp;
     private String quote;
 
-    public Quote(int number, String quote) {
-        this.number = number;
+    public Quote(String quote) {
+        timestamp = LocalDateTime.now();
         this.quote = quote;
     }
 
@@ -22,12 +24,12 @@ public class Quote {
         this.id = id;
     }
 
-    public int getNumber() {
-        return number;
+    public LocalDateTime getTimestamp() {
+        return timestamp;
     }
 
-    public void setNumber(int number) {
-        this.number = number;
+    public void setTimestamp(LocalDateTime timestamp) {
+        this.timestamp = timestamp;
     }
 
     public String getQuote() {

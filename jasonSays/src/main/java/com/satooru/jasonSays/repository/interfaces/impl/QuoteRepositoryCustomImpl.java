@@ -28,15 +28,14 @@ public class QuoteRepositoryCustomImpl implements QuoteRepositoryCustom{
     @Override
     public Quote findLatestQuote() {
         Query query = new Query();
-        query.with(Sort.by(Sort.Direction.DESC, "_id"));
+        query.with(Sort.by(Sort.Direction.DESC, "timestamp"));
         return mongoTemplate.findOne(query, Quote.class);
     }
 
     @Override
-    public void delete(int number) {
+    public void delete(String quote) {
         Query query = new Query();
-        query.addCriteria(Criteria.where("number").is(number));
+        query.addCriteria(Criteria.where("quote").is(quote));
         mongoTemplate.findAndRemove(query, Quote.class);
     }
-
 }
