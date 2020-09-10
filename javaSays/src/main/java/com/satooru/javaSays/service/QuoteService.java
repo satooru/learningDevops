@@ -1,8 +1,8 @@
-package com.satooru.jasonSays.service;
+package com.satooru.javaSays.service;
 
 import java.util.List;
 
-import com.satooru.jasonSays.model.Quote;
+import com.satooru.javaSays.model.Quote;
 
 public interface QuoteService {
     Quote findRandomQuote();

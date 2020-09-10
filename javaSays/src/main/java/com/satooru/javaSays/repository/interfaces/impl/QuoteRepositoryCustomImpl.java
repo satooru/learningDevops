@@ -1,4 +1,4 @@
-package com.satooru.jasonSays.repository.interfaces.impl;
+package com.satooru.javaSays.repository.interfaces.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
@@ -10,8 +10,8 @@ import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Repository;
 
-import com.satooru.jasonSays.model.Quote;
-import com.satooru.jasonSays.repository.interfaces.QuoteRepositoryCustom;
+import com.satooru.javaSays.model.Quote;
+import com.satooru.javaSays.repository.interfaces.QuoteRepositoryCustom;
 
 @Repository
 public class QuoteRepositoryCustomImpl implements QuoteRepositoryCustom{

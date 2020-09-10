@@ -1,21 +1,21 @@
-package com.satooru.jasonSays;
+package com.satooru.javaSays;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.satooru.jasonSays.model.Quote;
-import com.satooru.jasonSays.repository.interfaces.QuoteRepository;
+import com.satooru.javaSays.model.Quote;
+import com.satooru.javaSays.repository.interfaces.QuoteRepository;
 
 @SpringBootApplication
-public class JasonSaysApplication implements CommandLineRunner {
+public class JavaSaysApplication implements CommandLineRunner {
 
     @Autowired
     private QuoteRepository repository;
 
     public static void main(String[] args) {
-        SpringApplication.run(JasonSaysApplication.class, args);
+        SpringApplication.run(JavaSaysApplication.class, args);
     }
 
     @Override

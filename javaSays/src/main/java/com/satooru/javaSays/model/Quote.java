@@ -1,4 +1,4 @@
-package com.satooru.jasonSays.model;
+package com.satooru.javaSays.model;
 
 import java.time.LocalDateTime;
 

@@ -1,12 +1,12 @@
-package com.satooru.jasonSays.service;
+package com.satooru.javaSays.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.satooru.jasonSays.model.Quote;
-import com.satooru.jasonSays.repository.interfaces.QuoteRepository;
+import com.satooru.javaSays.model.Quote;
+import com.satooru.javaSays.repository.interfaces.QuoteRepository;
 
 @Service
 public class QuoteServiceImpl implements QuoteService {
