@@ -1,0 +1,3 @@
+[submodule "javaSays"]
+	path = javaSays
+	url = https://github.com/satooru/javaSays.git
