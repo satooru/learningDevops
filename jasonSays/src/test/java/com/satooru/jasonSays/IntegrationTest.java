@@ -1,61 +1,44 @@
-package com.satooru.jasonSays.controller;
+package com.satooru.jasonSays;
 
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-import static org.hamcrest.Matchers.*;
-import static org.mockito.Mockito.when;
-
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
+import org.junit.jupiter.api.MethodOrderer;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
-import com.satooru.jasonSays.model.Quote;
-import com.satooru.jasonSays.service.QuoteService;
 
-@RunWith(SpringRunner.class)
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+
+
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+
 @SpringBootTest
-public class QuoteControllerTest {
-    @Mock
-    private QuoteService quoteService;
+@AutoConfigureMockMvc
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+public class IntegrationTest {
 
-    @InjectMocks
-    private QuoteController quoteController;
-
+    @Autowired
     private MockMvc mockMvc;
 
-    @Before
-    public void setup() {
-        MockitoAnnotations.initMocks(this);
-        mockMvc = MockMvcBuilders.standaloneSetup(quoteController).build();
-    }
-
     @Test
+    @Order(1)
     public void findRandomQuoteTest() throws Exception {
-        when(quoteService.findRandomQuote()).thenReturn(new Quote("Test"));
-//        given(quoteService.findAll()).willReturn(new ArrayList<>());
-//        doNothing().when(quoteService.deleteQuote(BDDMockito.anyString()));
-//        Mockito.doNothing().when(quoteService).deleteQuote(BDDMockito.anyString());
-        
-//        given(quoteService.findRandomQuote()).willReturn(new Quote("Test"));
-
         mockMvc.perform(get("/"))
                .andDo(print())
                .andExpect(status().isOk())
-               .andExpect(jsonPath("$.quote").exists())
-               .andExpect(jsonPath("$.quote", is("Test")));
+               .andExpect(jsonPath("$.quote").exists());
     }
 
-    /*
     @Test
+    @Order(2)
     public void findLatestQuoteTest() throws Exception {
         mockMvc.perform(get("/latest"))
                .andDo(print())
@@ -64,6 +47,7 @@ public class QuoteControllerTest {
     }
 
     @Test
+    @Order(3)
     public void findAllTest() throws Exception {
         mockMvc.perform(get("/all"))
                .andDo(print())
@@ -72,6 +56,7 @@ public class QuoteControllerTest {
     }
 
     @Test
+    @Order(4)
     public void saveQuoteTest() throws Exception {
         mockMvc.perform(post("/")
                        .contentType("text/plain")
@@ -82,6 +67,7 @@ public class QuoteControllerTest {
     }
 
     @Test
+    @Order(5)
     public void deleteQuoteTest() throws Exception {
         mockMvc.perform(delete("/")
                        .contentType("text/plain")
@@ -90,5 +76,4 @@ public class QuoteControllerTest {
                .andExpect(status().isOk())
                .andExpect(content().string("Quote deleted successfully"));
     }
-    */
 }
