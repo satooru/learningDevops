@@ -14,6 +14,9 @@ This project simulates a Motivational Quote Picker using MongoDB, a Java BackEnd
 As for the Devops part, I plan to use Jenkins as CI/CD and Docker to manipulate containers.
 
 ## Logs
+**2020-02-27**
+ - Began some unit testing on controller using MockMvc
+ - Updated the delete method from service
 
 **2020-02-26**
  - Updated some methods from simple RESTful Application

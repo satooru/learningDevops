@@ -8,10 +8,12 @@ import org.springframework.data.mongodb.core.aggregation.AggregationResults;
 import org.springframework.data.mongodb.core.aggregation.SampleOperation;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.stereotype.Repository;
 
 import com.satooru.jasonSays.model.Quote;
 import com.satooru.jasonSays.repository.interfaces.QuoteRepositoryCustom;
 
+@Repository
 public class QuoteRepositoryCustomImpl implements QuoteRepositoryCustom{
 
     @Autowired
