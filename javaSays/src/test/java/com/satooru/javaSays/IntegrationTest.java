@@ -1,4 +1,4 @@
-package com.satooru.jasonSays;
+package com.satooru.javaSays;
 
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
