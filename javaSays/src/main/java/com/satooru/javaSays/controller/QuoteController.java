@@ -1,4 +1,4 @@
-package com.satooru.jasonSays.controller;
+package com.satooru.javaSays.controller;
 
 import java.util.List;
 
@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.satooru.jasonSays.model.Quote;
-import com.satooru.jasonSays.service.QuoteService;
+import com.satooru.javaSays.model.Quote;
+import com.satooru.javaSays.service.QuoteService;
 
 @RestController
 @RequestMapping

@@ -1,6 +1,6 @@
-package com.satooru.jasonSays.repository.interfaces;
+package com.satooru.javaSays.repository.interfaces;
 
-import com.satooru.jasonSays.model.Quote;
+import com.satooru.javaSays.model.Quote;
 
 public interface QuoteRepositoryCustom {
     Quote findRandomQuote();

@@ -18,9 +18,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
-import com.satooru.jasonSays.controller.QuoteController;
-import com.satooru.jasonSays.model.Quote;
-import com.satooru.jasonSays.service.QuoteService;
+import com.satooru.javaSays.controller.QuoteController;
+import com.satooru.javaSays.model.Quote;
+import com.satooru.javaSays.service.QuoteService;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
