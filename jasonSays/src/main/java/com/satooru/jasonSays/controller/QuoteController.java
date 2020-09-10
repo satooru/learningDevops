@@ -38,13 +38,14 @@ public class QuoteController {
     }
 
     @PostMapping("/")
-    public ResponseEntity<?> upsertQuote(@RequestBody String quote) {
+    public ResponseEntity<?> saveQuote(@RequestBody String quote) {
         quoteService.saveQuote(new Quote(quote));
         return new ResponseEntity("Quote added successfully", HttpStatus.OK);
     }
 
-    @DeleteMapping(value = "/")
-    public void deleteQuote(@RequestBody String quote) {
+    @DeleteMapping("/")
+    public ResponseEntity<?> deleteQuote(@RequestBody String quote) {
         quoteService.deleteQuote(quote);
+        return new ResponseEntity("Quote deleted successfully", HttpStatus.OK);
     }
 }
