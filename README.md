@@ -13,6 +13,18 @@ This project simulates a Motivational Quote Picker using MongoDB, a Java BackEnd
 
 As for the Devops part, I plan to use Jenkins as CI/CD and Docker to manipulate containers.
 
+## How to clone this repo? Why is javaSays Empty?
+[javaSays](https://github.com/satooru/javaSays) is a submodule, meaning it's a repo inside this repo.
+You can clone learningDevops by using this command:
+```
+git clone --recurse-submodules https://github.com/satooru/learningDevops
+```
+or in case you already cloned but forgot the "--recursive-submodules" argument, use this:
+```
+git submodule update --init
+```
+
+
 ## Logs
 **2020-09-10**
  - I don't remember exactly what I was doing...
